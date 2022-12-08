@@ -9,6 +9,7 @@ router.get('/nome/:nome', API.name)
 
 
 router.post('/frases', API.createPhrase);
-router.get('/frases', API.listPhrases)
+router.get('/frases', API.listPhrases);
+router.get('/frase/:id', API.getPhrase);
 
 export default router
