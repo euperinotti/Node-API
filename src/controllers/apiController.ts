@@ -45,3 +45,22 @@ export const getPhrase = async (req: Request, res: Response) => {
         })
     }
 }
+
+export const updatePhrase = async (req: Request, res: Response) => {
+    let { id } = req.params;
+    let { author, text } = req.body;
+
+    let phrase = await Phrase.findByPk(id);
+    if(phrase) {
+        phrase.author = author;
+        phrase.text = text;
+
+        await phrase.save();
+        
+        res.json({phrase});
+    } else {
+        res.json({
+            error: "Not Found"
+        })
+    }
+}
