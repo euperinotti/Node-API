@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Sequelize } from "sequelize";
 import { Phrase } from "../models/Phrase";
 
 export const ping = async (req: Request, res: Response) => {
@@ -69,4 +70,20 @@ export const deletePhrase = async (req: Request, res: Response) => {
     let { id } = req.params;
 
     await Phrase.destroy({ where: { id } });
+}
+
+export const randomPhrase = async (req: Request, res: Response) => {
+    let phrase = await Phrase.findOne({
+        order: [
+            Sequelize.fn('RANDOM')
+        ]
+    })
+
+    if(phrase) {
+        res.json({ phrase });
+    } else {
+        res.json({
+            error: "Not Found"
+        })
+    }
 }
