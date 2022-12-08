@@ -7,12 +7,12 @@ router.get('/ping', (req, res) => {
 })
 
 router.get('/random', (req, res) => {
-    let randomNumber = Math.floor(Math.random() * 10);
+    let randomNumber: number = Math.floor(Math.random() * 10);
     res.json({"number": randomNumber})
 })
 
 router.get('/nome/:nome', (req, res) => {
-    let name = req.params.nome;
+    let name: string = req.params.nome;
     res.json({name: name})
 })
 
