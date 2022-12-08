@@ -64,3 +64,9 @@ export const updatePhrase = async (req: Request, res: Response) => {
         })
     }
 }
+
+export const deletePhrase = async (req: Request, res: Response) => {
+    let { id } = req.params;
+
+    await Phrase.destroy({ where: { id } });
+}

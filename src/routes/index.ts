@@ -12,5 +12,6 @@ router.post('/frases', API.createPhrase);
 router.get('/frases', API.listPhrases);
 router.get('/frase/:id', API.getPhrase);
 router.put('/frase/:id', API.updatePhrase);
+router.delete('/frase/:id', API.deletePhrase);
 
 export default router
