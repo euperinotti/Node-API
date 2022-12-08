@@ -9,6 +9,6 @@ export const sequelize = new Sequelize(
     process.env.PG_PASSWORD as string,
     {
         dialect: 'postgres',
-        port: Number(process.env.PORT)
+        port: Number(process.env.PG_PORT)
     }
 )

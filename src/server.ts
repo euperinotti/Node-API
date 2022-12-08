@@ -20,4 +20,6 @@ app.use((req: Request, res: Response) => {
     res.json({error: 'Endpoint não encontrado.'});
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT, () => {
+    console.log(`Server running at port ${process.env.PORT}`)
+});

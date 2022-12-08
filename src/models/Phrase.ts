@@ -21,4 +21,7 @@ export const Phrase = sequelize.define<PhraseInstance>("Phrase", {
         type: DataTypes.TEXT,
         allowNull: false
     },
+}, {
+    tableName: 'phrases',
+    timestamps: false
 })
