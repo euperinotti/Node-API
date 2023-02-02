@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:staged" : "jest",
     "dev": "nodemon -e ts,json src/server.ts"
   },
   "author": "",
